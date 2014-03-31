@@ -1,0 +1,7 @@
+B:\PROJECTS\Kata\Kata\Kata.TicTacToe\obj\Debug\Kata.TicTacToe.csprojResolveAssemblyReference.cache
+B:\PROJECTS\Kata\Kata\Kata.TicTacToe\bin\Debug\Kata.TicTacToe.dll
+B:\PROJECTS\Kata\Kata\Kata.TicTacToe\bin\Debug\Kata.TicTacToe.pdb
+B:\PROJECTS\Kata\Kata\Kata.TicTacToe\bin\Debug\nunit.framework.dll
+B:\PROJECTS\Kata\Kata\Kata.TicTacToe\bin\Debug\nunit.framework.xml
+B:\PROJECTS\Kata\Kata\Kata.TicTacToe\obj\Debug\Kata.TicTacToe.dll
+B:\PROJECTS\Kata\Kata\Kata.TicTacToe\obj\Debug\Kata.TicTacToe.pdb

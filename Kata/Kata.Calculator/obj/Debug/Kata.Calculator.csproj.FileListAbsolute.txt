@@ -1,0 +1,9 @@
+B:\PROJECTS\Kata\Kata\Kata.Calculator\bin\Debug\Kata.Calculator.dll
+B:\PROJECTS\Kata\Kata\Kata.Calculator\bin\Debug\Kata.Calculator.pdb
+B:\PROJECTS\Kata\Kata\Kata.Calculator\bin\Debug\nunit.framework.dll
+B:\PROJECTS\Kata\Kata\Kata.Calculator\bin\Debug\nunit.framework.xml
+B:\PROJECTS\Kata\Kata\Kata.Calculator\obj\Debug\Kata.Calculator.csprojResolveAssemblyReference.cache
+B:\PROJECTS\Kata\Kata\Kata.Calculator\obj\Debug\Kata.Calculator.dll
+B:\PROJECTS\Kata\Kata\Kata.Calculator\obj\Debug\Kata.Calculator.pdb
+B:\PROJECTS\Kata\Kata\Kata.Calculator\bin\Debug\Moq.dll
+B:\PROJECTS\Kata\Kata\Kata.Calculator\bin\Debug\Moq.xml

@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Kata.TicTacToe.Domain;
+﻿using Kata.TicTacToe.Domain;
 using NUnit.Framework;
 
-namespace TicTacToe.Tests
+namespace Kata.TicTacToe.Tests
 {
 	[TestFixture]
 	public class CellTests
 	{
 		private Cell cell;
+
 		[SetUp]
 		public void Setup()
 		{
@@ -50,4 +46,5 @@ namespace TicTacToe.Tests
 		{
 			Assert.IsNotNull(cell.Row);
 		}
+	}
 }

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{064ECEB7-D34D-4028-8CE8-673605DD7E97}</ProjectGuid>
+    <ProjectGuid>{290FD67D-328D-4007-A9AD-E22C37EE619C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Kata.TicTacToe</RootNamespace>
-    <AssemblyName>Kata.TicTacToe</AssemblyName>
+    <RootNamespace>Kata.Calculator</RootNamespace>
+    <AssemblyName>Kata.Calculator</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -42,10 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Cell.cs" />
-    <Compile Include="Domain\Symbol.cs" />
+    <Compile Include="Calculator.cs" />
+    <Compile Include="CalculatorTests.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="NumberSequence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\CellTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
