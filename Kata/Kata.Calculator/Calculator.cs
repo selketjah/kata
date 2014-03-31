@@ -31,11 +31,11 @@ namespace Kata.Calculator
 		public int Add(NumberSequence numbers)
 		{
 			var chars = new List<string>(){",", "\n"};
-			if (HasPrefixedDelimiter(numbers))
+			if (numbers.HasPrefixedDelimiter())
 			{
-				var delimiter = numbers.ToString().Substring(2, 1);
+				var delimiter = numbers.GetDelimiters();
 				chars.Add(delimiter);
-				numbers = numbers.ToString().TrimStart('/').TrimStart(delimiter.ToCharArray());
+				numbers = numbers.Trim();
 			}
 
 			return Add(numbers.ToString().Split(chars.ToArray(), StringSplitOptions.None));
