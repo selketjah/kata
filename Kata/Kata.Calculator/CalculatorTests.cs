@@ -19,59 +19,38 @@ namespace Kata.Calculator
 		}
 
 		[Test]
-		public void EmptyStringShouldReturnNul()
+		public void EmptyNumberSequenceShouldReturnNul()
 		{
-			var empty = string.Empty;
-			int result = calculator.Add(empty);
-			Assert.AreEqual(result, 0);
+			int result = calculator.Add(Model.EmptyNumberSequence);
+			Assert.AreEqual(result, Model.EmptyNumberSequenceResult);
 		}
 
 		[Test]
-		public void OneStringShouldReturnStringAsNumber()
+		public void NumberSequenceWithOneNumberShouldReturnThatNumber()
 		{
-			NumberSequence one = "1";
-			const int expectedResult = 1;
-			int result = calculator.Add(one);
-			Assert.AreEqual(result, expectedResult);
+			int result = calculator.Add(Model.NumberSequenceWithOneNumber);
+			Assert.AreEqual(result, Model.NumberSequenceWithOneNumberResult);
 		}
 
 		[Test]
-		public void TwoStringsShouldReturnSumOfStrings()
+		public void NumberSequenceWithTwoNumbersShouldReturnSumOfNumbers()
 		{
-			NumberSequence numbers = "4,3";
-			const int expectedResult = 7;
-			var result = calculator.Add(numbers);
-			Assert.AreEqual(expectedResult, result);
+			var result = calculator.Add(Model.NumberSequenceWithTwoNumbers);
+			Assert.AreEqual(result, Model.NumberSequenceWithTwoNumbersResult);
 		}
 
 		[Test]
-		public void FourStringsShouldReturnSumOfStrings()
+		public void NumberSequenceWithCommaDelimiterShouldReturnSumOfNumbers()
 		{
-			NumberSequence numbers = "0,1,2,3";
-			const int expectedResult = 6;
-			var actualResult = calculator.Add(numbers);
-
-			Assert.AreEqual(expectedResult, actualResult);
-		}
-
-		[Test]
-		public void FourNumbersAsStringShouldReturnSumOfStrings()
-		{
-			NumberSequence numbers = "0,1,2,3";
-			const int expectedResult = 6;
-			var actualResult = calculator.Add(numbers);
-
-			Assert.AreEqual(expectedResult, actualResult);
+			var actualResult = calculator.Add(Model.NumberSequenceWithCommaDelimiter);
+			Assert.AreEqual(Model.NumberSequenceWithCommaDelimiterResult, actualResult);
 		}
 
 		[Test]
 		public void StringWithLineDelimiterShouldReturnSumOfStrings()
 		{
-			NumberSequence numbers = "0,1\n2,3";
-			const int expectedResult = 6;
-			var actualResult = calculator.Add(numbers);
-			
-			Assert.AreEqual(actualResult, expectedResult);
+			var actualResult = calculator.Add(Model.NumberSequenceWithMultipleDelimiters);			
+			Assert.AreEqual(actualResult, Model.NumberSequenceWithMultipleDelimitersResult);
 		}
 	}
 }
