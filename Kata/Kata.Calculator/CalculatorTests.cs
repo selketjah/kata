@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace Kata.Calculator
@@ -10,47 +6,61 @@ namespace Kata.Calculator
 	[TestFixture]
 	public class CalculatorTests
 	{
-		private ICalculator calculator;
+		private ICalculator _calculator;
 
 		[SetUp]
 		public void Setup()
 		{
-			calculator = new Calculator();
+			_calculator = new Calculator();
 		}
 
 		[Test]
 		public void EmptyNumberSequenceShouldReturnNul()
 		{
-			int result = calculator.Add(Model.EmptyNumberSequence);
+			int result = _calculator.Add(Model.EmptyNumberSequence);
 			Assert.AreEqual(result, Model.EmptyNumberSequenceResult);
 		}
 
 		[Test]
 		public void NumberSequenceWithOneNumberShouldReturnThatNumber()
 		{
-			int result = calculator.Add(Model.NumberSequenceWithOneNumber);
+			int result = _calculator.Add(Model.NumberSequenceWithOneNumber);
 			Assert.AreEqual(result, Model.NumberSequenceWithOneNumberResult);
 		}
 
 		[Test]
 		public void NumberSequenceWithTwoNumbersShouldReturnSumOfNumbers()
 		{
-			var result = calculator.Add(Model.NumberSequenceWithTwoNumbers);
+			var result = _calculator.Add(Model.NumberSequenceWithTwoNumbers);
 			Assert.AreEqual(result, Model.NumberSequenceWithTwoNumbersResult);
 		}
 
 		[Test]
 		public void NumberSequenceWithCommaDelimiterShouldReturnSumOfNumbers()
 		{
-			var actualResult = calculator.Add(Model.NumberSequenceWithCommaDelimiter);
+			var actualResult = _calculator.Add(Model.NumberSequenceWithCommaDelimiter);
 			Assert.AreEqual(Model.NumberSequenceWithCommaDelimiterResult, actualResult);
 		}
 
 		[Test]
-		public void StringWithLineDelimiterShouldReturnSumOfStrings()
+		public void NumberSequenceWithMultipleDelimitersShouldReturnSumOfNumbers()
 		{
-			var actualResult = calculator.Add(Model.NumberSequenceWithMultipleDelimiters);			
+			var actualResult = _calculator.Add(Model.NumberSequenceWithMultipleDelimiters);			
 			Assert.AreEqual(actualResult, Model.NumberSequenceWithMultipleDelimitersResult);
+		}
+
+		[Test]
+		public void NumberSequenceWithPrefixDelimiterShouldReturnSumOfNumbers()
+		{
+			var result = _calculator.Add(Model.NumberSequenceWithPrefixedDelimiters);
+			Assert.AreEqual(result, Model.NumberSequenceWithPrefixedDelimitersResult);
+		}
+
+		[Test]
+		public void NumberSequenceWithNegativeNumbersThrowsException()
+		{
+			TestDelegate act = () => _calculator.Add(Model.NumberSequenceWithNegativeNumbers);
+			Assert.Throws<Exception>(act);
 		}
 	}
 }
