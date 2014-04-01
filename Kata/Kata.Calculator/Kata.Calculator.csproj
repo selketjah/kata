@@ -46,8 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
-    <Compile Include="CalculatorTests.cs" />
+    <Compile Include="CalculatorSumTests.cs" />
     <Compile Include="Model.cs" />
+    <Compile Include="NegativeNumbersException.cs" />
     <Compile Include="NumberSequence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

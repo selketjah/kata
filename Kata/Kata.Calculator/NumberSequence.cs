@@ -1,10 +1,10 @@
 ﻿namespace Kata.Calculator
 {
-	public struct NumberSequence
+	public class NumberSequence
 	{
 		private string _value;
 
-		private NumberSequence(string value)
+		public NumberSequence(string value)
 		{
 			this._value = value;
 		}
@@ -14,7 +14,7 @@
 			return new NumberSequence(numbers);
 		}
 
-		public string GetDelimiters()
+		public string GetDelimiter()
 		{
 			return _value.Substring(2, 1);
 		}
@@ -26,7 +26,7 @@
 
 		public NumberSequence Trim()
 		{
-			var delimiter = GetDelimiters();
+			var delimiter = GetDelimiter();
 			return _value.TrimStart('/').TrimStart(delimiter.ToCharArray());
 		}
 

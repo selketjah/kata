@@ -6,14 +6,14 @@ namespace Kata.Calculator
 {
 	public interface ICalculator
 	{
-		int Add(NumberSequence numbers);
+		int Sum(NumberSequence numbers);
 	}
 
 	public class Calculator : ICalculator
 	{
-		internal int Add(params string[] numbers)
+		internal int Sum(params string[] numbers)
 		{
-			IList<int> convertedNumbers = ConvertToIntegers(numbers);
+			IList<int> convertedNumbers = ConvertList(numbers);
 			if (HasNegativeNumbers(convertedNumbers)) throw new Exception();
 			return convertedNumbers.Sum();
 		}
@@ -23,27 +23,23 @@ namespace Kata.Calculator
 			return numbers.Count(x => x < 0) > 0;
 		}
 
-		internal IList<int> ConvertToIntegers(params string[] numbers)
+		internal IList<int> ConvertList(params string[] numbers)
 		{
-			return numbers.Select(x => string.IsNullOrEmpty(x) ? 0 : Convert.ToInt32(x)).ToList();
+			return numbers.Select(x => string.IsNullOrEmpty(x) ? 0 : Convert.ToInt32(x))
+										.Where(n => n <= 1000)
+										.ToList();
 		}
 
-		public int Add(NumberSequence numbers)
+		public int Sum(NumberSequence numbers)
 		{
 			var chars = new List<string>(){",", "\n"};
 			if (numbers.HasPrefixedDelimiter())
 			{
-				var delimiter = numbers.GetDelimiters();
-				chars.Add(delimiter);
+				chars.Add(numbers.GetDelimiter());
 				numbers = numbers.Trim();
 			}
 
-			return Add(numbers.ToString().Split(chars.ToArray(), StringSplitOptions.None));
-		}
-
-		internal bool HasPrefixedDelimiter(NumberSequence numbers)
-		{
-			return numbers.ToString().StartsWith("//");
+			return Sum(numbers.ToString().Split(chars.ToArray(), StringSplitOptions.None));
 		}
 	}
 }
