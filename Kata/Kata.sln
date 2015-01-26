@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata.TicTacToe", "Kata.TicTacToe\Kata.TicTacToe.csproj", "{064ECEB7-D34D-4028-8CE8-673605DD7E97}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata.Calculator", "Kata.Calculator\Kata.Calculator.csproj", "{290FD67D-328D-4007-A9AD-E22C37EE619C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata.FileReader", "Kata.FileReader\Kata.FileReader.csproj", "{030369FC-62C5-4015-B813-4B0C0CFBE62C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata.Euler", "Kata.Euler\Kata.Euler.csproj", "{B481BD29-17C2-46C3-9F6E-8F51ECAC8235}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +25,14 @@ Global
 		{290FD67D-328D-4007-A9AD-E22C37EE619C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{290FD67D-328D-4007-A9AD-E22C37EE619C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{290FD67D-328D-4007-A9AD-E22C37EE619C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{030369FC-62C5-4015-B813-4B0C0CFBE62C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{030369FC-62C5-4015-B813-4B0C0CFBE62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{030369FC-62C5-4015-B813-4B0C0CFBE62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{030369FC-62C5-4015-B813-4B0C0CFBE62C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B481BD29-17C2-46C3-9F6E-8F51ECAC8235}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B481BD29-17C2-46C3-9F6E-8F51ECAC8235}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B481BD29-17C2-46C3-9F6E-8F51ECAC8235}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B481BD29-17C2-46C3-9F6E-8F51ECAC8235}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
