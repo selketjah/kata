@@ -3,15 +3,13 @@ using System.Linq;
 
 namespace WordChainPuzzle.Domain
 {
-  public class WordChainDictionary                                                                                                                                                   
+  public class WordChainDictionaryCleaner                                                                                                                                                   
   {
-    private readonly string _targetWord;
     private readonly int _wordLength;
     private string[] _dictionary;
 
-    public WordChainDictionary(string targetWord, int wordLength, string[] dictionary)
+    public WordChainDictionaryCleaner(int wordLength, string[] dictionary)
     {
-      _targetWord = targetWord;
       _wordLength = wordLength;
       _dictionary = dictionary;
     }
@@ -20,7 +18,6 @@ namespace WordChainPuzzle.Domain
     {
       _dictionary = RemoveDifferentLengthWords();
       _dictionary = RemoveDuplicates();
-      _dictionary = SortByTargetWord();
       return _dictionary;
     }
 
@@ -32,12 +29,6 @@ namespace WordChainPuzzle.Domain
     public string[] RemoveDuplicates()
     {
       return _dictionary.Distinct().ToArray();
-    }
-
-    public string[] SortByTargetWord()
-    {
-      var temp = _dictionary.OrderBy(w => new OneLetterDifferentWordComparer(w, _targetWord).CountDifference()).ToArray();
-      return temp;
     }
   }
 }
