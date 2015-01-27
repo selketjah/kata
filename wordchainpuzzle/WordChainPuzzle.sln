@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordChainPuzzle.Domain", "W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordChainPuzzle.Play", "WordChainPuzzle.Play\WordChainPuzzle.Play.csproj", "{631DC82E-83E9-4887-93D0-14125678052E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordChainPuzzle.UI", "WordChainPuzzle.UI\WordChainPuzzle.UI.csproj", "{C1C90FD0-0CC1-4DA2-A264-456F398D5DF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{631DC82E-83E9-4887-93D0-14125678052E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{631DC82E-83E9-4887-93D0-14125678052E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{631DC82E-83E9-4887-93D0-14125678052E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1C90FD0-0CC1-4DA2-A264-456F398D5DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C90FD0-0CC1-4DA2-A264-456F398D5DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C90FD0-0CC1-4DA2-A264-456F398D5DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C90FD0-0CC1-4DA2-A264-456F398D5DF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
