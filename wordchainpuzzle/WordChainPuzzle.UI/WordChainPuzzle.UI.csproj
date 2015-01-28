@@ -65,11 +65,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\css\reset.less" />
+    <Content Include="content\css\wordchain.less" />
+    <Content Include="content\output\wordchain.css" />
+    <Content Include="images\banner.jpg" />
+    <Content Include="images\chain_failure.jpg" />
+    <Content Include="images\chain_success.jpg" />
+    <Content Include="images\banner2.jpg" />
+    <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
