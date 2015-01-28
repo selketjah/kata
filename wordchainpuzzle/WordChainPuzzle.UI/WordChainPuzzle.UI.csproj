@@ -67,6 +67,7 @@
   <ItemGroup>
     <Content Include="content\css\reset.less" />
     <Content Include="content\css\wordchain.less" />
+    <Content Include="content\js\wordchainpuzzle.js" />
     <Content Include="content\output\wordchain.css" />
     <Content Include="images\banner.jpg" />
     <Content Include="images\chain_failure.jpg" />
