@@ -3,7 +3,7 @@ using WordChainPuzzle.Domain;
 
 namespace WordChainPuzzle.Tests {
   [TestFixture]
-  public class WordChainDictionaryTests {
+  public class WordListCleanerTests {
     private WordListCleaner _sut;
 
     public void SetUp()
