@@ -2,12 +2,12 @@ using System.Linq;
 
 namespace WordChainPuzzle.Domain
 {
-  public class WordChainDictionaryCleaner                                                                                                                                                   
+  public class WordListCleaner                                                                                                                                                   
   {
     private readonly int _wordLength;
     private string[] _dictionary;
 
-    public WordChainDictionaryCleaner(int wordLength, string[] dictionary)
+    public WordListCleaner(int wordLength, string[] dictionary)
     {
       _wordLength = wordLength;
       _dictionary = dictionary;

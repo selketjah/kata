@@ -4,23 +4,25 @@ using WordChainPuzzle.Domain;
 namespace WordChainPuzzle.Tests {
   [TestFixture]
   public class WordChainDictionaryTests {
+    private WordListCleaner _sut;
+
+    public void SetUp()
+    {
+      _sut = new WordListCleaner(3, new[] {"cat", "dog", "cot", "toolarge", "oa"});
+    }
 
     [Test]
     public void WordsWithDifferentLengthAreRemoved()
     {
-      var wordpuzzle = new WordChainDictionaryCleaner(3, new []{"cat", "dog", "cot", "toolarge", "oa"});
-      var result = wordpuzzle.RemoveDifferentLengthWords();
+      var result = _sut.RemoveDifferentLengthWords();
       Assert.AreEqual(result, new[] { "cat", "dog", "cot" });
     }
 
     [Test]
     public void DuplicatesAreRemoved()
     {
-      var wordpuzzle = new WordChainDictionaryCleaner(3, new[] { "cat", "dog", "cot", "cat", "toolarge", "oa" });
-      var result = wordpuzzle.RemoveDuplicates();
+      var result = _sut.RemoveDuplicates();
       Assert.AreEqual(result, new[] { "cat", "dog", "cot", "toolarge", "oa" });
     }
-
-
   }
 }
