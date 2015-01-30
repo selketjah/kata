@@ -1,33 +1,17 @@
-using System.Linq;
-
 namespace WordChainPuzzle.Domain
 {
-  public class WordListCleaner                                                                                                                                                   
+  public class WordListCleaner
   {
-    private readonly int _wordLength;
-    private string[] _dictionary;
+    private readonly string _word;
 
-    public WordListCleaner(int wordLength, string[] dictionary)
+    public WordListCleaner(string word)
     {
-      _wordLength = wordLength;
-      _dictionary = dictionary;
+      _word = word;
     }
 
-    public string[] Clean()
+    public int GetCleanLength()
     {
-      _dictionary = RemoveDifferentLengthWords();
-      _dictionary = RemoveDuplicates();
-      return _dictionary;
-    }
-
-    public string[] RemoveDifferentLengthWords()
-    {
-      return _dictionary.Where(w => w.Length == _wordLength).ToArray();
-    }
-
-    public string[] RemoveDuplicates()
-    {
-      return _dictionary.Distinct().ToArray();
+      return _word.Length;
     }
   }
 }

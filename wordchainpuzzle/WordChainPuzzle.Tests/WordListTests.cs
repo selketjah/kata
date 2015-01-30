@@ -3,12 +3,12 @@ using WordChainPuzzle.Domain;
 
 namespace WordChainPuzzle.Tests {
   [TestFixture]
-  public class WordListCleanerTests {
-    private WordListCleaner _sut;
+  public class WordListTests {
+    private WordList _sut;
 
     public void SetUp()
     {
-      _sut = new WordListCleaner(3, new[] {"cat", "dog", "cot", "toolarge", "oa"});
+      _sut = new WordList(new[] {"cat", "dog", "cot", "toolarge", "oa"}, new WordListCleaner("cat"));
     }
 
     [Test]

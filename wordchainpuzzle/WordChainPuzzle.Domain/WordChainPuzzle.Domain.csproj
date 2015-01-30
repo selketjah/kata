@@ -44,8 +44,9 @@
     <Compile Include="OneLetterDifferentWordComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordChain.cs" />
-    <Compile Include="WordListCleaner.cs" />
+    <Compile Include="WordList.cs" />
     <Compile Include="WordChainFileReader.cs" />
+    <Compile Include="WordListCleaner.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

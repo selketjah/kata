@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WordChainDictionaryTests.cs" />
+    <Compile Include="WordListTests.cs" />
     <Compile Include="WordChainFileReaderTests.cs" />
     <Compile Include="WordChainTests.cs" />
     <Compile Include="WordComparerTests.cs" />

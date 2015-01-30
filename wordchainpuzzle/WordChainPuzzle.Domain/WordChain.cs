@@ -14,8 +14,8 @@ namespace WordChainPuzzle.Domain {
       if (beginWord == null) throw new ArgumentNullException("beginWord");
       if (targetWord == null) throw new ArgumentNullException("targetWord");
       //prep dictionary
-      var dictionaryCleaner = new WordListCleaner(beginWord.Length, _dictionary);
-      var wordlist = dictionaryCleaner.Clean();
+      var startList = new WordList(_dictionary, new WordListCleaner(beginWord));
+      var wordlist = startList.Clean();
       //get chain
       var chainList = new List<string>();
       var chain = Search(beginWord, targetWord, chainList, wordlist);
