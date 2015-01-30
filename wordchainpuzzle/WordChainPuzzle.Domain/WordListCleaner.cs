@@ -1,17 +1,21 @@
+using System.Collections.Generic;
+using System.Linq;
+
 namespace WordChainPuzzle.Domain
 {
+
   public class WordListCleaner
   {
-    private readonly string _word;
+    private readonly Word _cleanTo;
 
-    public WordListCleaner(string word)
+    public WordListCleaner(Word cleanTo)
     {
-      _word = word;
+      _cleanTo = cleanTo;
     }
 
-    public int GetCleanLength()
+    public List<Word> RemoveWordsWithDifferentLength(List<Word> wordList)
     {
-      return _word.Length;
+      return wordList.Where(w => w.GetLength() == _cleanTo.GetLength()).ToList();
     }
   }
 }

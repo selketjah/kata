@@ -43,6 +43,7 @@
     <Compile Include="DifferentWordLengthException.cs" />
     <Compile Include="OneLetterDifferentWordComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Word.cs" />
     <Compile Include="WordChain.cs" />
     <Compile Include="WordList.cs" />
     <Compile Include="WordChainFileReader.cs" />

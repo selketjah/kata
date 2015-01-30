@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace WordChainPuzzle.Domain {
   public class WordChain {
-    private readonly string[] _dictionary;
+    private readonly List<Word> _dictionary;
 
-    public WordChain(string[] dictionary) {
+    public WordChain(List<Word> dictionary) {
       _dictionary = dictionary;
     }
 
@@ -14,11 +14,11 @@ namespace WordChainPuzzle.Domain {
       if (beginWord == null) throw new ArgumentNullException("beginWord");
       if (targetWord == null) throw new ArgumentNullException("targetWord");
       //prep dictionary
-      var startList = new WordList(_dictionary, new WordListCleaner(beginWord));
-      var wordlist = startList.Clean();
+      //var startList = new WordList(_dictionary, new WordListCleaner(beginWord));
+      //var wordlist = startList.RemoveDifferentLengthWords();
       //get chain
       var chainList = new List<string>();
-      var chain = Search(beginWord, targetWord, chainList, wordlist);
+      var chain = Search(beginWord, targetWord, chainList, null);
       return String.Join(", ", chainList);
     }
 

@@ -10,7 +10,7 @@ namespace WordChainPuzzle.Tests {
     public void LoadFileReturnsAnArrayOfStrings()
     {
       var fr = new WordChainFileReader();
-      var dictionary = fr.LoadDictionary(@"B:\PROJECTS\Kata\wordlist.txt");
+      var dictionary = fr.CreateWordList(@"B:\PROJECTS\Kata\wordlist.txt");
       Assert.IsTrue(dictionary.Any());
     }
 

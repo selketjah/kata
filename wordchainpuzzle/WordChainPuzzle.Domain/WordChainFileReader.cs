@@ -1,15 +1,21 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System;
 
 namespace WordChainPuzzle.Domain
 {
   public class WordChainFileReader
   {
-    public string[] LoadDictionary(string filePath)
+    public List<Word> CreateWordList(string filePath)
     {
-      using (var sr = new StreamReader(filePath)) {
-        string words = sr.ReadToEnd();
-        return words.Split('\n');
+      using (var sr = new StreamReader(filePath))
+      {
+        var words = new List<Word>();
+        var line = sr.ReadLine();
+        while ((line = sr.ReadLine()) != null) {
+          words.Add(new Word(line));
+        }
+        return words;
       }
     }
   }
