@@ -25,7 +25,7 @@ namespace WordChainPuzzle.Tests {
     public void GivenACleanWordWhenCleaningListThenWordsWithDifferentLengthAreRemoved()
     {
       var result = _sut.RemoveWordsWithDifferentLength(_startList);
-      Assert.AreEqual(result, new List<Word>() { new Word("cat"), new Word("dog"), new Word("cot") });
+      Assert.That(result, Is.EquivalentTo(new List<Word>() { new Word("cat"), new Word("dog"), new Word("cot") }));
     }
 
   }

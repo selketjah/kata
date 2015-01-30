@@ -36,5 +36,16 @@ namespace WordChainPuzzle.Domain
     {
       return _word.Length;
     }
+
+    public override string ToString()
+    {
+      return _word.ToString();
+    }
+
+    public override bool Equals(object obj)
+    {
+      var word = obj as Word;
+      return word != null && _word.Equals(word.ToString());
+    }
   }
 }
