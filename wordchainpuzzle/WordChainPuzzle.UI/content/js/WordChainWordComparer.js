@@ -6,6 +6,10 @@ define(function(){
 
 		var self = this;
 
+		self.countDifferences = function(){
+			
+		}
+
 		return self;
 	}
 })

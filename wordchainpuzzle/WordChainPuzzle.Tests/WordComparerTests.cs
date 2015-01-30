@@ -6,31 +6,33 @@ namespace WordChainPuzzle.Tests {
   public class WordComparerTests {
     private OneLetterDifferentWordComparer _sut;
 
+    [SetUp]
+    public void Setup()
+    {
+      _sut = new OneLetterDifferentWordComparer("cat");
+    }
+
     [Test]
     public void ReturnsTrueIfTwoWordsAreOneLetterApart() {
-      _sut = new OneLetterDifferentWordComparer("cat", "bat");
-      var result = _sut.Compare();
+      var result = _sut.Compare("bat");
       Assert.IsTrue(result);
     }
 
     [Test]
     public void ReturnsFalseIfTwoWordsEqual() {
-      _sut = new OneLetterDifferentWordComparer("cat", "cat");
-      var result = _sut.Compare();
+      var result = _sut.Compare("cat");
       Assert.IsFalse(result);
     }
 
     [Test]
     public void ReturnsFalseIfTwoWordsAreTwoOrMoreLettersApart() {
-      _sut = new OneLetterDifferentWordComparer("cat", "dfd");
-      var result = _sut.Compare();
+      var result = _sut.Compare("dfd");
       Assert.IsFalse(result);
     }
 
     [Test]
     public void ThrowsExceptionIfWordsHaveDifferentLength() {
-      _sut = new OneLetterDifferentWordComparer("cat", "cats");
-      Assert.Throws<DifferentWordLengthException>(() => _sut.Compare());
+      Assert.Throws<DifferentWordLengthException>(() => _sut.Compare("cats"));
     }
   }
 }

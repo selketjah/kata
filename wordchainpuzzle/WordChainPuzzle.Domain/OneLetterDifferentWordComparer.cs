@@ -2,20 +2,19 @@
 {
   public class OneLetterDifferentWordComparer {
     private readonly string _keyWord;
-    private readonly string _compareTo;
 
-    public OneLetterDifferentWordComparer(string keyWord, string compareTo) {
+    public OneLetterDifferentWordComparer(string keyWord)
+    {
       _keyWord = keyWord;
-      _compareTo = compareTo;
     }
 
-    public bool Compare() {
-      if (_keyWord.Length != _compareTo.Length)
+    public bool Compare(string compareTo) {
+      if (_keyWord.Length != compareTo.Length)
         throw new DifferentWordLengthException();
 
       var length = _keyWord.Length;
       var firstWordChars = _keyWord.ToCharArray();
-      var secondWordChars = _compareTo.ToCharArray();
+      var secondWordChars = compareTo.ToCharArray();
       var result = 0;
 
       for (int i = 0; i < length; i++) {
@@ -26,14 +25,14 @@
       return result == length - 1;
     }
 
-    public int CountDifference()
+    public int CountDifference(string countDifferenceTo)
     {
-      if (_keyWord.Length != _compareTo.Length)
+      if (_keyWord.Length != countDifferenceTo.Length)
         throw new DifferentWordLengthException();
 
       var length = _keyWord.Length;
       var firstWordChars = _keyWord.ToCharArray();
-      var secondWordChars = _compareTo.ToCharArray();
+      var secondWordChars = countDifferenceTo.ToCharArray();
       var result = 0;
 
       for (int i = 0; i < length; i++) {

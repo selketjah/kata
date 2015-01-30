@@ -49,7 +49,7 @@ namespace WordChainPuzzle.Domain {
     }
 
     public string[] SortByTargetWord(string[] wordlist, string targetWord) {
-      return wordlist.OrderBy(w => new OneLetterDifferentWordComparer(w, targetWord).CountDifference()).ToArray();
+      return wordlist.OrderBy(w => new OneLetterDifferentWordComparer(w).CountDifference(targetWord)).ToArray();
     }
 
     public string[] RemoveWordsThatHaveAlreadyBeenSeen(string[] wordlist, string[] chain) {
@@ -58,7 +58,7 @@ namespace WordChainPuzzle.Domain {
 
     public string[] RemoveWordsWithMoreThanOneDifferenceFromStartWord(string[] wordlist, string startWord)
     {
-      return wordlist.Where(x => new OneLetterDifferentWordComparer(x, startWord).CountDifference() <= 1).ToArray();
+      return wordlist.Where(x => new OneLetterDifferentWordComparer(x).CountDifference(startWord) <= 1).ToArray();
     }
   }
 }
