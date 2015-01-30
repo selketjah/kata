@@ -8,7 +8,7 @@
       _keyWord = keyWord;
     }
 
-    public bool Compare(string compareTo) {
+    public bool CompareWith(string compareTo) {
       if (_keyWord.Length != compareTo.Length)
         throw new DifferentWordLengthException();
 
@@ -25,7 +25,7 @@
       return result == length - 1;
     }
 
-    public int CountDifference(string countDifferenceTo)
+    public int CountDifferenceWith(string countDifferenceTo)
     {
       if (_keyWord.Length != countDifferenceTo.Length)
         throw new DifferentWordLengthException();

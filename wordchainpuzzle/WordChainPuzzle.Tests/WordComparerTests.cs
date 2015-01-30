@@ -14,25 +14,25 @@ namespace WordChainPuzzle.Tests {
 
     [Test]
     public void ReturnsTrueIfTwoWordsAreOneLetterApart() {
-      var result = _sut.Compare("bat");
+      var result = _sut.CompareWith("bat");
       Assert.IsTrue(result);
     }
 
     [Test]
     public void ReturnsFalseIfTwoWordsEqual() {
-      var result = _sut.Compare("cat");
+      var result = _sut.CompareWith("cat");
       Assert.IsFalse(result);
     }
 
     [Test]
     public void ReturnsFalseIfTwoWordsAreTwoOrMoreLettersApart() {
-      var result = _sut.Compare("dfd");
+      var result = _sut.CompareWith("dfd");
       Assert.IsFalse(result);
     }
 
     [Test]
     public void ThrowsExceptionIfWordsHaveDifferentLength() {
-      Assert.Throws<DifferentWordLengthException>(() => _sut.Compare("cats"));
+      Assert.Throws<DifferentWordLengthException>(() => _sut.CompareWith("cats"));
     }
   }
 }
