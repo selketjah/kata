@@ -17,5 +17,10 @@ namespace WordChainPuzzle.Domain
     {
       return wordList.Where(w => w.GetLength() == _cleanTo.GetLength()).ToList();
     }
+
+    public List<Word> RemoveDuplicates(List<Word> startList)
+    {
+      return startList.Where(w => !w.ToString().Equals(_cleanTo.ToString())).ToList();
+    }
   }
 }

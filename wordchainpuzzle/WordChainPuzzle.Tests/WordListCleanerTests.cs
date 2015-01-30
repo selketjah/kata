@@ -28,5 +28,12 @@ namespace WordChainPuzzle.Tests {
       Assert.That(result, Is.EquivalentTo(new List<Word>() { new Word("cat"), new Word("dog"), new Word("cot") }));
     }
 
+    [Test]
+    public void GivenACleanWordWhenRemovingDuplicatesThenDuplicateWordsAreRemoved()
+    {
+      var result = _sut.RemoveDuplicates(_startList);
+      Assert.That(result, Is.EquivalentTo(new List<Word>() { new Word("dog"), new Word("cot"), new Word("toolarge"), new Word("oa") }));
+    }
+
   }
 }
