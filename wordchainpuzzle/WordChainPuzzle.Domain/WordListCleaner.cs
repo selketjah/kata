@@ -25,7 +25,7 @@ namespace WordChainPuzzle.Domain
 
     public List<Word> RemoveWordsWithMoreThanOneDifferenceFromCleanWord(List<Word> startList)
     {
-      return startList.Where(x => new OneLetterDifferentWordComparer(x.ToString()).CountDifferenceWith(_cleanTo.ToString()) <= 1).ToList();
+      return startList.Where(x => x.CountLetterDifferences(_cleanTo) <= 1).ToList();
     }
 
     public List<Word> RemoveWordsThatHaveAlreadyBeenSeen(List<Word> startList, List<Word> words)
