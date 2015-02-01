@@ -35,5 +35,18 @@ namespace WordChainPuzzle.Tests {
       Assert.That(result, Is.EquivalentTo(new List<Word>() { new Word("dog"), new Word("cot"), new Word("toolarge"), new Word("oa") }));
     }
 
+    [Test]
+    public void RemoveWordsWithMoreThanOneDifferenceFromCleanWord()
+    {
+
+      var result = _sut.RemoveWordsWithMoreThanOneDifferenceFromCleanWord(new List<Word>() { new Word("cat"), new Word("dog"), new Word("cot") });
+      Assert.That(result, Is.EquivalentTo(new List<Word>() { new Word("cat"), new Word("cot") }));
+    }
+
+    [Test]
+    public void RemovesWordsThatHaveAlreadyBeenSeen() {
+      var result = _sut.RemoveWordsThatHaveAlreadyBeenSeen(new List<Word>() { new Word("cat"), new Word("dog"), new Word("cot") }, new List<Word>() { new Word("cot") });
+      Assert.AreEqual(result, new List<Word>() { new Word("cat"), new Word("dog") });
+    }
   }
 }

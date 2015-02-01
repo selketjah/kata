@@ -39,13 +39,18 @@ namespace WordChainPuzzle.Domain
 
     public override string ToString()
     {
-      return _word.ToString();
+      return _word;
     }
 
     public override bool Equals(object obj)
     {
       var word = obj as Word;
       return word != null && _word.Equals(word.ToString());
+    }
+
+    public override int GetHashCode()
+    {
+      return _word.GetHashCode();
     }
   }
 }
