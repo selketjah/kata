@@ -10,26 +10,26 @@ namespace WordChainPuzzle.Domain {
       _dictionary = dictionary;
     }
 
-    public string GetChain(string beginWord, string targetWord) {
-      if (beginWord == null) throw new ArgumentNullException("beginWord");
+    public string GetChain(string startWord, string targetWord) {
+      if (startWord == null) throw new ArgumentNullException("startWord");
       if (targetWord == null) throw new ArgumentNullException("targetWord");
-      //prep dictionary
-      //var startList = new WordList(_dictionary, new WordListCleaner(beginWord));
-      //var wordlist = startList.RemoveDifferentLengthWords();
-      //get chain
-      var chainList = new List<string>();
-      var chain = Search(beginWord, targetWord, chainList, null);
+
+      var chainList = new List<Word>();
+      var chain = Search(new Word(startWord), new Word(targetWord), chainList, _dictionary);
       return String.Join(", ", chainList);
     }
 
-    public bool Search(string startWord, string targetWord, List<string> chain, string[] dictionary) {
-      var wordlist = this.RemoveWordsWithMoreThanOneDifferenceFromStartWord(dictionary, startWord);
-      wordlist = this.RemoveWordsThatHaveAlreadyBeenSeen(wordlist, chain.ToArray());
-      wordlist = this.SortByTargetWord(wordlist, targetWord);
+    public bool Search(Word startWord, Word targetWord, List<Word> chain, List<Word> dictionary)
+    {
+      var listCleaner = new WordListCleaner(startWord);
+      var wordlist = listCleaner.RemoveWordsWithDifferentLength(dictionary);
+      wordlist = listCleaner.RemoveWordsWithMoreThanOneDifferenceFromCleanWord(wordlist);
+      wordlist = listCleaner.RemoveDuplicates(wordlist);
+      wordlist = listCleaner.RemoveWordsThatHaveAlreadyBeenSeen(wordlist, chain);
 
-      for (int i = 0; i < wordlist.Length; i++)
+      for (int i = 0; i < wordlist.Count; i++)
       {
-        string word = wordlist[i];
+        var word = wordlist[i];
         chain.Add(startWord);
         if (word.Equals(targetWord))
         {
@@ -46,19 +46,6 @@ namespace WordChainPuzzle.Domain {
       }
 
       return false;
-    }
-
-    public string[] SortByTargetWord(string[] wordlist, string targetWord) {
-      return wordlist.OrderBy(w => new OneLetterDifferentWordComparer(w).CountDifferenceWith(targetWord)).ToArray();
-    }
-
-    public string[] RemoveWordsThatHaveAlreadyBeenSeen(string[] wordlist, string[] chain) {
-      return wordlist.Except(chain).ToArray();
-    }
-
-    public string[] RemoveWordsWithMoreThanOneDifferenceFromStartWord(string[] wordlist, string startWord)
-    {
-      return wordlist.Where(x => new OneLetterDifferentWordComparer(x).CountDifferenceWith(startWord) <= 1).ToArray();
     }
   }
 }
