@@ -32,5 +32,9 @@ namespace WordChainPuzzle.Domain
     {
       return startList.Except(words).ToList();
     }
+
+    public List<Word> SortByTargetWord(List<Word> wordlist, Word targetWord) {
+      return wordlist.OrderBy(w => w.CountLetterDifferences(targetWord)).ToList();
+    }
   }
 }

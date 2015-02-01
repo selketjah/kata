@@ -48,5 +48,12 @@ namespace WordChainPuzzle.Tests {
       var result = _sut.RemoveWordsThatHaveAlreadyBeenSeen(new List<Word>() { new Word("cat"), new Word("dog"), new Word("cot") }, new List<Word>() { new Word("cot") });
       Assert.AreEqual(result, new List<Word>() { new Word("cat"), new Word("dog") });
     }
+
+    [Test]
+    public void SortToTargetWord()
+    {
+      var result = _sut.SortByTargetWord(new List<Word>() { new Word("cat"), new Word("dog"), new Word("cot") }, new Word("dog"));
+      Assert.AreEqual(result, new List<Word>() { new Word("dog"), new Word("cot"), new Word("cat") });
+    }
   }
 }
