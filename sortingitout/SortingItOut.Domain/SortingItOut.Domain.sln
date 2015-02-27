@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingItOut.Domain", "SortingItOut.Domain.csproj", "{6FD34B45-571A-44C7-8E25-1E436503A88B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingItOut.Tests", "..\SortingItOut.Tests\SortingItOut.Tests.csproj", "{160EB22E-444F-4239-8135-25AF0E4A7E58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FD34B45-571A-44C7-8E25-1E436503A88B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FD34B45-571A-44C7-8E25-1E436503A88B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FD34B45-571A-44C7-8E25-1E436503A88B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FD34B45-571A-44C7-8E25-1E436503A88B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{160EB22E-444F-4239-8135-25AF0E4A7E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{160EB22E-444F-4239-8135-25AF0E4A7E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{160EB22E-444F-4239-8135-25AF0E4A7E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{160EB22E-444F-4239-8135-25AF0E4A7E58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

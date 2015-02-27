@@ -6,8 +6,8 @@ define(function(){
 
 		var self = this;
 
-		self.countDifferences = function(){
-			
+		self.countDifferences = function(compareTo){
+
 		}
 
 		return self;

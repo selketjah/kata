@@ -1,4 +1,4 @@
-﻿define(function(){
+define(function(){
 	return function WordChain(dictionary) {
 
 		if(!(this instanceof WordChain)){
@@ -7,8 +7,11 @@
   			var self = this, _dictionary = dictionary;
 
   			self.getChain = function(startWord, targetWord){
-  				if(startWord == null) return;
-  				if(targetWord == null) return;
+  				if(startWord == null) throw "start word needs to be filled in.";
+  				if(targetWord == null) throw "target word needs to be filled in.";
+
+  				
+
   			}
 
 
