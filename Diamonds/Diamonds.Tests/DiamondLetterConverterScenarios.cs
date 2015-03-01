@@ -7,13 +7,18 @@ using Xunit;
 
 namespace Diamonds.Tests {
   public class DiamondLetterConverterScenarios {
+    private AlphabeticalLetterConverter _alphabeticalLetterConverter;
+
+    public DiamondLetterConverterScenarios()
+    {
+      _alphabeticalLetterConverter = new AlphabeticalLetterConverter();
+    }
 
     [Fact]
     public void Given_the_capital_letter_f_it_returns_alphabetical_number_value()
     {
       var letter = 'F';
-      var letterConverter = new AlphabeticalLetterConverter();
-      var result = letterConverter.GetAlphabeticalValue(letter);
+      var result = _alphabeticalLetterConverter.GetAlphabeticalValue(letter);
       Assert.Equal(6, result);
     }
 
@@ -21,8 +26,7 @@ namespace Diamonds.Tests {
     public void Given_the_capital_letter_i_it_returns_alphabetical_number_value()
     {
       var letter = 'I';
-      var letterConverter = new AlphabeticalLetterConverter();
-      var result = letterConverter.GetAlphabeticalValue(letter);
+      var result = _alphabeticalLetterConverter.GetAlphabeticalValue(letter);
       Assert.Equal(9, result);
     }
 
@@ -30,8 +34,7 @@ namespace Diamonds.Tests {
     public void Given_the_lower_letter_i_it_returns_capital_alphabetical_number_value()
     {
       var letter = 'i';
-      var letterConverter = new AlphabeticalLetterConverter();
-      var result = letterConverter.GetAlphabeticalValue(letter);
+      var result = _alphabeticalLetterConverter.GetAlphabeticalValue(letter);
       Assert.Equal(9, result);
     }
   }
