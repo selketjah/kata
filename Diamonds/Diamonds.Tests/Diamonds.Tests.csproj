@@ -51,6 +51,7 @@
     <Compile Include="DiamondLetterConverterScenarios.cs" />
     <Compile Include="LeftDiamondPaddingScenarios.cs" />
     <Compile Include="DiamondScenarios.cs" />
+    <Compile Include="MiddleDiamondPaddingScenarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
