@@ -9,20 +9,38 @@ namespace Diamonds.Tests {
   public class DiamondLetterConverterScenarios {
 
     [Fact]
-    public void Given_the_letter_f_it_returns_alphabetical_number_value()
+    public void Given_the_capital_letter_f_it_returns_alphabetical_number_value()
     {
-      var letter = 'f';
-      var letterConverter = new DiamondLetterConverter();
+      var letter = 'F';
+      var letterConverter = new AlphabeticalLetterConverter();
       var result = letterConverter.GetAlphabeticalValue(letter);
-      Assert.Equal(7, result);
+      Assert.Equal(6, result);
+    }
+
+    [Fact]
+    public void Given_the_capital_letter_i_it_returns_alphabetical_number_value()
+    {
+      var letter = 'I';
+      var letterConverter = new AlphabeticalLetterConverter();
+      var result = letterConverter.GetAlphabeticalValue(letter);
+      Assert.Equal(9, result);
+    }
+
+    [Fact]
+    public void Given_the_lower_letter_i_it_returns_capital_alphabetical_number_value()
+    {
+      var letter = 'i';
+      var letterConverter = new AlphabeticalLetterConverter();
+      var result = letterConverter.GetAlphabeticalValue(letter);
+      Assert.Equal(9, result);
     }
   }
 
-  public class DiamondLetterConverter
+  public class AlphabeticalLetterConverter
   {
     public int GetAlphabeticalValue(char letter)
     {
-      return 7;
+      return char.ToUpper(letter) - 64;
     }
   }
 }
