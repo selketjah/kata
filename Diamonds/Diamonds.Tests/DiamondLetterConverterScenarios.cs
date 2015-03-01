@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Diamonds.Domain;
 using Xunit;
 
 namespace Diamonds.Tests {
@@ -36,14 +32,6 @@ namespace Diamonds.Tests {
       var letter = 'i';
       var result = _alphabeticalLetterConverter.GetAlphabeticalValue(letter);
       Assert.Equal(9, result);
-    }
-  }
-
-  public class AlphabeticalLetterConverter
-  {
-    public int GetAlphabeticalValue(char letter)
-    {
-      return char.ToUpper(letter) - 64;
     }
   }
 }
