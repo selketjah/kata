@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlphabeticalLetterConverter.cs" />
-    <Compile Include="DiamondPadding.cs" />
+    <Compile Include="LeftDiamondPadding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

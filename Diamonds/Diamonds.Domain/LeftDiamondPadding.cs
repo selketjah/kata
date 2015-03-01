@@ -1,11 +1,11 @@
 ﻿namespace Diamonds.Domain
 {
-  public class DiamondPadding
+  public class LeftDiamondPadding
   {
     private readonly AlphabeticalLetterConverter _alc;
     private readonly int _diamondLetterValue;
 
-    public DiamondPadding(char diamondLetter)
+    public LeftDiamondPadding(char diamondLetter)
     {
       _alc = new AlphabeticalLetterConverter();
       _diamondLetterValue = _alc.GetAlphabeticalValue(diamondLetter);
