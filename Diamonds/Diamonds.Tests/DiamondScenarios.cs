@@ -9,16 +9,22 @@ namespace Diamonds.Tests
       public void Does_not_return_empty_string()
       {
         var diamond = new Diamond();
-        var result = diamond.Make("b");
-        Spec.
+        var result = diamond.Make('A');
+        Assert.NotEmpty(result);
+      }
+
+      [Fact]
+      public void First_row_contains_A()
+      {
+        
       }
     }
 
   public class Diamond
   {
-    public string[] Make(string letter)
+    public string Make(char letter)
     {
-      throw new System.NotImplementedException();
+      return "*";
     }
   }
 }
