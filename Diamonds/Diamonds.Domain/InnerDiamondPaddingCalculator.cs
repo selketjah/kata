@@ -1,12 +1,12 @@
 ﻿namespace Diamonds.Domain
 {
-  public class MiddleDiamondPadding
+  public class InnerDiamondPaddingCalculator
   {
     private readonly char _diamondLetter;
     private AlphabeticalLetterConverter _alc;
     private readonly int _diamondLetterValue;
 
-    public MiddleDiamondPadding(char diamondLetter)
+    public InnerDiamondPaddingCalculator(char diamondLetter)
     {
       _diamondLetter = diamondLetter;
       _alc = new AlphabeticalLetterConverter();
@@ -15,6 +15,11 @@
 
     public int Get(char letter)
     {
+      if (letter.Equals('A'))
+      {
+        return 0;
+      }
+
       var baseDiamondLetterValue = GetBaseValue();
       var diamondLetterPositionValue = GetPositionValue(letter);
 

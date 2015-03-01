@@ -2,7 +2,7 @@
 using Xunit;
 
 namespace Diamonds.Tests {
-  public class LeftDiamondPaddingScenarios
+  public class OuterDiamondPaddingScenarios
   {
     private const char DiamondLetter = 'F';
 
@@ -10,7 +10,7 @@ namespace Diamonds.Tests {
     public void letter_F_returns_paddingLeft_0()
     {
       var letter = 'F';
-      var diamondPadding = new LeftDiamondPadding(DiamondLetter);
+      var diamondPadding = new OuterDiamondPaddingCalculator(DiamondLetter);
       int paddingLeft = diamondPadding.Get(letter);
       Assert.Equal(0, paddingLeft);
     }
@@ -19,16 +19,25 @@ namespace Diamonds.Tests {
     public void letter_C_for_diamond_F_returns_paddingLeft_3()
     {
       var letter = 'C';
-      var diamondPadding = new LeftDiamondPadding(DiamondLetter);
+      var diamondPadding = new OuterDiamondPaddingCalculator(DiamondLetter);
       int paddingLeft = diamondPadding.Get(letter);
       Assert.Equal(3, paddingLeft);
+    }
+
+    [Fact]
+    public void letter_D_for_diamond_F_returns_paddingLeft_2()
+    {
+      var letter = 'D';
+      var diamondPadding = new OuterDiamondPaddingCalculator(DiamondLetter);
+      int paddingLeft = diamondPadding.Get(letter);
+      Assert.Equal(2, paddingLeft);
     }
 
     [Fact]
     public void letter_A_for_diamond_F_returns_paddingLeft_6()
     {
       var letter = 'A';
-      var diamondPadding = new LeftDiamondPadding(DiamondLetter);
+      var diamondPadding = new OuterDiamondPaddingCalculator(DiamondLetter);
       int paddingLeft = diamondPadding.Get(letter);
       Assert.Equal(6, paddingLeft);
     }
