@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Diamonds.Domain;
+﻿using Diamonds.Domain;
 using Xunit;
 
 namespace Diamonds.Tests {
@@ -36,30 +31,6 @@ namespace Diamonds.Tests {
       var diamondPadding = new DiamondPadding(DiamondLetter);
       int paddingLeft = diamondPadding.GetLeft(letter);
       Assert.Equal(6, paddingLeft);
-    }
-  }
-
-  public class DiamondPadding
-  {
-    private readonly AlphabeticalLetterConverter _alc;
-    private readonly int _diamondLetterValue;
-
-    public DiamondPadding(char diamondLetter)
-    {
-      _alc = new AlphabeticalLetterConverter();
-      _diamondLetterValue = _alc.GetAlphabeticalValue(diamondLetter);
-    }
-
-    public int GetLeft(char letter)
-    {
-      var letterValue = _alc.GetAlphabeticalValue(letter);
-
-      if (letter.Equals('A'))
-      {
-        return _diamondLetterValue;
-      }
-
-      return _diamondLetterValue - letterValue;
     }
   }
 }
