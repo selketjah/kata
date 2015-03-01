@@ -11,7 +11,7 @@ namespace Diamonds.Tests {
     {
       var letter = 'F';
       var diamondPadding = new LeftDiamondPadding(DiamondLetter);
-      int paddingLeft = diamondPadding.GetLeft(letter);
+      int paddingLeft = diamondPadding.Get(letter);
       Assert.Equal(0, paddingLeft);
     }
 
@@ -20,7 +20,7 @@ namespace Diamonds.Tests {
     {
       var letter = 'C';
       var diamondPadding = new LeftDiamondPadding(DiamondLetter);
-      int paddingLeft = diamondPadding.GetLeft(letter);
+      int paddingLeft = diamondPadding.Get(letter);
       Assert.Equal(3, paddingLeft);
     }
 
@@ -29,7 +29,7 @@ namespace Diamonds.Tests {
     {
       var letter = 'A';
       var diamondPadding = new LeftDiamondPadding(DiamondLetter);
-      int paddingLeft = diamondPadding.GetLeft(letter);
+      int paddingLeft = diamondPadding.Get(letter);
       Assert.Equal(6, paddingLeft);
     }
   }

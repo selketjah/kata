@@ -11,7 +11,7 @@
       _diamondLetterValue = _alc.GetAlphabeticalValue(diamondLetter);
     }
 
-    public int GetLeft(char letter)
+    public int Get(char letter)
     {
       var letterValue = _alc.GetAlphabeticalValue(letter);
 
