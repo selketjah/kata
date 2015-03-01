@@ -2,7 +2,7 @@
 using Xunit;
 
 namespace Diamonds.Tests {
-  public class OuterDiamondPaddingScenarios
+  public class OuterDiamondPaddingCalculatorScenarios
   {
     private const char DiamondLetter = 'F';
 

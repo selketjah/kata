@@ -1,5 +1,4 @@
 ﻿using Diamonds.Domain;
-using FsCheck.Fluent;
 using Xunit;
 
 namespace Diamonds.Tests

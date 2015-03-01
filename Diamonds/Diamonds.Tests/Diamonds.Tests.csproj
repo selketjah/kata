@@ -49,9 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DiamondLetterConverterScenarios.cs" />
-    <Compile Include="OuterDiamondPaddingScenarios.cs" />
+    <Compile Include="OuterDiamondPaddingCalculatorScenarios.cs" />
     <Compile Include="DiamondScenarios.cs" />
-    <Compile Include="MiddleDiamondPaddingScenarios.cs" />
+    <Compile Include="InnerDiamondPaddingCalculatorScenarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
