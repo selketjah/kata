@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DiamondLetterConverterScenarios.cs" />
+    <Compile Include="DiamondLetterScenarios.cs" />
     <Compile Include="OuterDiamondPaddingCalculatorScenarios.cs" />
     <Compile Include="DiamondScenarios.cs" />
     <Compile Include="InnerDiamondPaddingCalculatorScenarios.cs" />
