@@ -14,7 +14,7 @@ namespace Diamonds.Domain
       {
         var currentLetter = new DiamondLetter(c);
 
-        var row = GetRow(c, currentLetter.GetOuterPadding(baseLetter), currentLetter.GetInnerPadding(baseLetter));
+        var row = currentLetter.GetRow(baseLetter);
 
         if (c.Equals(baseLetter))
         {
@@ -28,26 +28,6 @@ namespace Diamonds.Domain
       }
 
       return rows.Aggregate((current, row) => string.Format(@"{0}{1}{2}", current, Environment.NewLine, row));
-    }
-
-    private string GetRow(char c, int outerPaddingNumber, int innerPaddingNumber)
-    {
-      var innerPadding = GetPadding(innerPaddingNumber);
-      var outerPadding = GetPadding(outerPaddingNumber);
-      if (innerPaddingNumber == 0)
-      {
-        return string.Format("{0}{1}{2}", outerPadding, c, outerPadding);
-      }
-      return string.Format("{0}{1}{2}{3}{4}", outerPadding, c, innerPadding, c, outerPadding);
-    }
-
-    private string GetPadding(int paddingNumber)
-    {
-      if (paddingNumber > 0)
-      {
-        return new String(' ', paddingNumber);
-      }
-      return "";
     }
   }
 }
