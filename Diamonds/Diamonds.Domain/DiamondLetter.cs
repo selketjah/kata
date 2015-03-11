@@ -15,12 +15,12 @@ namespace Diamonds.Domain
       _outerDiamondPaddingCalculator = new OuterDiamondPaddingCalculator();
     }
 
-    public int GetInnerPadding(char diamondLetter)
+    private int GetInnerPadding(char diamondLetter)
     {
       return _innerDiamondPaddingCalculator.Get(diamondLetter, _letter);
     }
 
-    public int GetOuterPadding(char diamondLetter)
+    private int GetOuterPadding(char diamondLetter)
     {
       return _outerDiamondPaddingCalculator.Get(diamondLetter, _letter);
     }
