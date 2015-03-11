@@ -11,24 +11,14 @@ namespace Diamonds.Domain
     public DiamondLetter(char letter)
     {
       _letter = letter;
-      _innerDiamondPaddingCalculator = new InnerDiamondPaddingCalculator();
-      _outerDiamondPaddingCalculator = new OuterDiamondPaddingCalculator();
-    }
-
-    private int GetInnerPadding(char diamondLetter)
-    {
-      return _innerDiamondPaddingCalculator.Get(diamondLetter, _letter);
-    }
-
-    private int GetOuterPadding(char diamondLetter)
-    {
-      return _outerDiamondPaddingCalculator.Get(diamondLetter, _letter);
+      _innerDiamondPaddingCalculator = new InnerDiamondPaddingCalculator(_letter);
+      _outerDiamondPaddingCalculator = new OuterDiamondPaddingCalculator(_letter);
     }
 
     public string GetRow(char diamondLetter) {
 
-      var innerPadding = GetInnerPadding(diamondLetter);
-      var outerPadding = GetOuterPadding(diamondLetter);
+      var innerPadding = _innerDiamondPaddingCalculator.Get(diamondLetter);
+      var outerPadding = _outerDiamondPaddingCalculator.Get(diamondLetter);
       if (innerPadding == 0) {
         return string.Format("{0}{1}{2}", GetPadding(outerPadding), _letter, GetPadding(outerPadding));
       }

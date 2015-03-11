@@ -2,24 +2,26 @@
 {
   public class InnerDiamondPaddingCalculator
   {
+    private readonly char _letter;
     private AlphabeticalLetterConverter _alc;
 
-    public InnerDiamondPaddingCalculator()
+    public InnerDiamondPaddingCalculator(char letter)
     {
+      _letter = letter;
       _alc = new AlphabeticalLetterConverter();
     }
 
-    public int Get(char baseLetter, char letter)
+    public int Get(char baseLetter)
     {
-      if (letter.Equals('A'))
+      if (_letter.Equals('A'))
       {
         return 0;
       }
 
       var baseDiamondLetterValue = GetBaseValue(baseLetter);
-      var diamondLetterPositionValue = GetPositionValue(baseLetter, letter);
+      var diamondLetterPositionValue = GetPositionValue(baseLetter, _letter);
 
-      if (baseLetter.Equals(letter))
+      if (baseLetter.Equals(_letter))
       {
         return baseDiamondLetterValue;
       }
