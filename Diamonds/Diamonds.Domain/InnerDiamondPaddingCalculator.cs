@@ -2,28 +2,24 @@
 {
   public class InnerDiamondPaddingCalculator
   {
-    private readonly char _diamondLetter;
     private AlphabeticalLetterConverter _alc;
-    private readonly int _diamondLetterValue;
 
-    public InnerDiamondPaddingCalculator(char diamondLetter)
+    public InnerDiamondPaddingCalculator()
     {
-      _diamondLetter = diamondLetter;
       _alc = new AlphabeticalLetterConverter();
-      _diamondLetterValue = _alc.GetAlphabeticalValue(diamondLetter);
     }
 
-    public int Get(char letter)
+    public int Get(char baseLetter, char letter)
     {
       if (letter.Equals('A'))
       {
         return 0;
       }
 
-      var baseDiamondLetterValue = GetBaseValue();
-      var diamondLetterPositionValue = GetPositionValue(letter);
+      var baseDiamondLetterValue = GetBaseValue(baseLetter);
+      var diamondLetterPositionValue = GetPositionValue(baseLetter, letter);
 
-      if (_diamondLetter.Equals(letter))
+      if (baseLetter.Equals(letter))
       {
         return baseDiamondLetterValue;
       }
@@ -31,16 +27,16 @@
       return baseDiamondLetterValue - (diamondLetterPositionValue * 2);
     }
 
-    private int GetPositionValue(char letter)
+    private int GetPositionValue(char baseLetter, char letter)
     {
       var letterValue = _alc.GetAlphabeticalValue(letter);
-      var diamondLetterPositionValue = _diamondLetterValue - letterValue;
+      var diamondLetterPositionValue = _alc.GetAlphabeticalValue(baseLetter) - letterValue;
       return diamondLetterPositionValue;
     }
 
-    private int GetBaseValue()
+    private int GetBaseValue(char baseLetter)
     {
-      var baseDiamondLetterValue = (_diamondLetterValue * 2) - 1;
+      var baseDiamondLetterValue = (_alc.GetAlphabeticalValue(baseLetter) * 2) - 1;
       return baseDiamondLetterValue;
     }
   }
