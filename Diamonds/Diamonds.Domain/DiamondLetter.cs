@@ -41,5 +41,16 @@ namespace Diamonds.Domain
       }
       return "";
     }
+
+    public override bool Equals(object obj)
+    {
+      var letter = obj is char ? (char) obj : '\0';
+      return _letter.Equals(letter);
+    }
+
+    public override int GetHashCode()
+    {
+      return _letter.GetHashCode();
+    }
   }
 }

@@ -16,7 +16,7 @@ namespace Diamonds.Domain
 
         var row = currentLetter.GetRow(baseLetter);
 
-        if (c.Equals(baseLetter))
+        if (currentLetter.Equals(baseLetter))
         {
           rows.Add(row);
         }
