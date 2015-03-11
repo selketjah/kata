@@ -7,22 +7,22 @@ namespace Diamonds.Domain
   public class Diamond
   {
     private readonly InnerDiamondPaddingCalculator _innerDiamondPaddingCalculator;
+    private readonly OuterDiamondPaddingCalculator _outerDiamondPaddingCalculator;
 
     public Diamond()
     {
       _innerDiamondPaddingCalculator = new InnerDiamondPaddingCalculator();
+      _outerDiamondPaddingCalculator = new OuterDiamondPaddingCalculator();
     }
 
     public string Make(char letter)
     {
-      var outerDiamondPaddingCalculator = new OuterDiamondPaddingCalculator(letter);
-
       var rows = new List<string>();
 
       for (char c = letter; c >= 'A'; c--)
       {
 
-        var paddingLeft = outerDiamondPaddingCalculator.Get(c);
+        var paddingLeft = _outerDiamondPaddingCalculator.Get(letter, c);
         var paddingMiddle = _innerDiamondPaddingCalculator.Get(letter, c);
         var row = GetRow(c, paddingLeft, paddingMiddle);
 

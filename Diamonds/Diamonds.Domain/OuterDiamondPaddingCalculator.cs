@@ -3,16 +3,15 @@
   public class OuterDiamondPaddingCalculator
   {
     private readonly AlphabeticalLetterConverter _alc;
-    private readonly int _diamondLetterValue;
 
-    public OuterDiamondPaddingCalculator(char diamondLetter)
+    public OuterDiamondPaddingCalculator()
     {
       _alc = new AlphabeticalLetterConverter();
-      _diamondLetterValue = _alc.GetAlphabeticalValue(diamondLetter);
     }
 
-    public int Get(char letter)
+    public int Get(char baseLetter, char letter)
     {
+      var _diamondLetterValue = _alc.GetAlphabeticalValue(baseLetter);
       var letterValue = _alc.GetAlphabeticalValue(letter);
 
       if (letter.Equals('A'))
