@@ -13,7 +13,6 @@ namespace Diamonds.Domain
       for (char c = baseLetter; c >= 'A'; c--)
       {
         var currentLetter = new DiamondLetter(c);
-
         var row = currentLetter.GetRow(baseLetter);
 
         if (currentLetter.Equals(baseLetter))
