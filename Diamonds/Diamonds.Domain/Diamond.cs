@@ -6,27 +6,17 @@ namespace Diamonds.Domain
 {
   public class Diamond
   {
-    private readonly InnerDiamondPaddingCalculator _innerDiamondPaddingCalculator;
-    private readonly OuterDiamondPaddingCalculator _outerDiamondPaddingCalculator;
-
-    public Diamond()
-    {
-      _innerDiamondPaddingCalculator = new InnerDiamondPaddingCalculator();
-      _outerDiamondPaddingCalculator = new OuterDiamondPaddingCalculator();
-    }
-
-    public string Make(char letter)
+    public string Make(char baseLetter)
     {
       var rows = new List<string>();
 
-      for (char c = letter; c >= 'A'; c--)
+      for (char c = baseLetter; c >= 'A'; c--)
       {
+        var currentLetter = new DiamondLetter(c);
 
-        var paddingLeft = _outerDiamondPaddingCalculator.Get(letter, c);
-        var paddingMiddle = _innerDiamondPaddingCalculator.Get(letter, c);
-        var row = GetRow(c, paddingLeft, paddingMiddle);
+        var row = GetRow(c, currentLetter.GetOuterPadding(baseLetter), currentLetter.GetInnerPadding(baseLetter));
 
-        if (c.Equals(letter))
+        if (c.Equals(baseLetter))
         {
           rows.Add(row);
         }
