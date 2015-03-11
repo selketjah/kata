@@ -8,16 +8,16 @@ namespace Diamonds.Domain
   {
     public string Make(char letter)
     {
-      var leftDiamondPadding = new OuterDiamondPaddingCalculator(letter);
-      var middleDiamondPadding = new InnerDiamondPaddingCalculator(letter);
+      var outerDiamondPaddingCalculator = new OuterDiamondPaddingCalculator(letter);
+      var innerDiamondPaddingCalculator = new InnerDiamondPaddingCalculator(letter);
 
       var rows = new List<string>();
 
       for (char c = letter; c >= 'A'; c--)
       {
 
-        var paddingLeft = leftDiamondPadding.Get(c);
-        var paddingMiddle = middleDiamondPadding.Get(c);
+        var paddingLeft = outerDiamondPaddingCalculator.Get(c);
+        var paddingMiddle = innerDiamondPaddingCalculator.Get(c);
         var row = GetRow(c, paddingLeft, paddingMiddle);
 
         if (c.Equals(letter))
